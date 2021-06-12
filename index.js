@@ -7,7 +7,7 @@ async function getWeather([lon, lat]) {
   const response = await fetch(url.toString());
   const json = await response.json();
 
-  const forecast = json.properties.timeseries[0].data;
+  const forecast = json.properties.timeseries.find(ts => ts.time.includes('T12:00:00Z')).data;
 
   return {
     altitude: json.geometry.coordinates[2],
