@@ -139,13 +139,13 @@ addEventListener('fetch', async event => {
 
   try {
     response = await handle(event);
-
-    response.headers.set('Access-Control-Allow-Origin', '*');
-    response.headers.set('Access-Control-Request-Method', 'GET');
   } catch (e) {
     console.error(e);
     response = errorResponse(e.message);
   }
+
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Request-Method', 'GET');
 
   event.respondWith(response);
 });
