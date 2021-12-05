@@ -99,7 +99,8 @@ async function handle (event) {
   const response = await fetch('https://proxy.podd.app/https://fastrt.nilu.no/cgi-bin/olaeng/VitD-ez.cgi', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'origin': 'https://vitamin-d-duration.deno.dev'
     },
     body: formData.toString()
   });
