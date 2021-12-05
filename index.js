@@ -96,11 +96,10 @@ async function handle (event) {
   formData.append('altitude', altitude / 1000);
   formData.append('type', '3');
 
-  const response = await fetch('https://proxy.podd.app/https://fastrt.nilu.no/cgi-bin/olaeng/VitD-ez.cgi', {
+  const response = await fetch('https://fastrt.nilu.no/cgi-bin/olaeng/VitD-ez.cgi', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'origin': 'https://vitamin-d-duration.deno.dev'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: formData.toString()
   });
