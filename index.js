@@ -106,6 +106,8 @@ async function handle (event) {
 
   const text = await response.text();
 
+  console.log(text);
+
   let [startHour, stopHour, duration] = text.split('<BR>').pop().split('</body>')[0].trim().split(' ').map(parseFloat).filter(n => !Number.isNaN(n));
 
   const offset = getHourOffsetFromUTC();
